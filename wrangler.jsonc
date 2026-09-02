@@ -11,7 +11,7 @@
   "vars": {
     // ★ 必填：JWT 认证密钥（至少16位随机字符串，未配置将拒绝所有登录请求）
     // 生成示例：openssl rand -hex 32
-    "JWT_SECRET": "",
+    "JWT_SECRET": "c2c8444cd09a864e12bc5ed9a20bf7d181626707b2aa135c8d9c59dd20149264",
 
     // D1 是否启用（true=使用D1/远程数据库，false=仅使用KV）
     "ENABLE_D1": true,
@@ -45,7 +45,7 @@
   "kv_namespaces": [
     {
       "binding": "KV_DATA",       // ← 请勿修改 binding 名称
-      "id": ""                    // ← 填入你在 CF 控制台创建的 KV 命名空间 ID
+      "id": "d0a2ac569b5646e89b1fe5976c99231f"                    // ← 填入你在 CF 控制台创建的 KV 命名空间 ID
     }
   ],
 
@@ -55,8 +55,8 @@
   "d1_databases": [
     {
       "binding": "D1_DATA",       // ← 请勿修改 binding 名称
-      "database_name": "",        // ← 填入你在 CF 控制台创建的 D1 数据库名称
-      "database_id": ""           // ← 填入你在 CF 控制台创建的 D1 数据库 UUID
+      "database_name": "openlist",        // ← 填入你在 CF 控制台创建的 D1 数据库名称
+      "database_id": "9f262d56-eb2c-43f0-86d1-83f92403e804"           // ← 填入你在 CF 控制台创建的 D1 数据库 UUID
     }
   ],
 
