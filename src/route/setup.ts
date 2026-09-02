@@ -105,6 +105,17 @@ export function setupRoutes(app: Hono<any>) {
     });
 
     // ------------------------------------------------------------------
+    // GET /api/system/info — 系统信息（公开）
+    // 返回版本、运行环境、运行时间、内存、CPU 等信息
+    // ------------------------------------------------------------------
+    app.get('/api/system/info', async (c: Context): Promise<any> => {
+        const system = new SystemManage(c);
+        const result = await system.getSystemInfo();
+        if (!result.flag) return errorResp(c, result.text || '获取系统信息失败', 500);
+        return successResp(c, result.data);
+    });
+
+    // ------------------------------------------------------------------
     // 旧版兼容路由（保留原有格式）
     // ------------------------------------------------------------------
     app.use('/@setup/:action/:method', async (c: Context): Promise<any> => {

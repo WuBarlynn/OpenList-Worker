@@ -543,5 +543,12 @@ export const taskApi = {
         apiService.post(`/api/task/${type}/clear_succeeded`, {}),
 };
 
+// 系统信息相关API
+export const systemApi = {
+    // 获取系统信息（版本、运行环境、运行时间、内存、CPU 等）
+    getSystemInfo: () =>
+        apiService.get('/api/system/info'),
+};
+
 const api = apiService;
 export default api;
